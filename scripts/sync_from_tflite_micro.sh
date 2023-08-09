@@ -55,6 +55,6 @@ python3 "${SCRIPT_DIR}"/create_tflm_arduino.py \
 # updated from ${OUTPUT_DIR}
 find "${OUTPUT_DIR}" -maxdepth 1 \! -path "${OUTPUT_DIR}" -print | xargs -I "{}" rm -rf "{}"
 # copy ${OUTPUT_DIR} to the repo
-cp "${OUTPUT_DIR}" "${ROOT_DIR}"
+cp -r "${OUTPUT_DIR}" "${ROOT_DIR}"
 
 rm -rf "${TEMP_DIR}"
