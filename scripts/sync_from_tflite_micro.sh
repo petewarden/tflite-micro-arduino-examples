@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -x
 # Copyright 2021 The TensorFlow Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,8 +53,8 @@ python3 "${SCRIPT_DIR}"/create_tflm_arduino.py \
 
 # Now, at the root of the repo, remove files and subdirectories that will be
 # updated from ${OUTPUT_DIR}
-find "${OUTPUT_DIR}" -maxdepth 1 \! -path "${OUTPUT_DIR}" -print | xargs -I "{}" rm -rf "{}"
+#find "${OUTPUT_DIR}" -maxdepth 1 \! -path "${OUTPUT_DIR}" -print | xargs -I "{}" rm -rf "{}"
 # copy ${OUTPUT_DIR} to the repo
-cp -r "${OUTPUT_DIR}" "${ROOT_DIR}"
+cp -r ${OUTPUT_DIR}/* ${ROOT_DIR}/
 
-rm -rf "${TEMP_DIR}"
+#rm -rf "${TEMP_DIR}"
